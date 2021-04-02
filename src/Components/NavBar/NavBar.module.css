@@ -5,9 +5,18 @@
   opacity: 50%;
 }
 
-.nav a{
+.item{
+  text-align: center;
+  padding: 5px;
+}
+
+.item a{
   text-decoration: none;
   color: brown;
+}
+
+.item a.active{
+  color: white;
 }
 
 
