@@ -6,7 +6,7 @@ import Profile from "./Components/Profile/Profile";
 import Dialogs from "./Components/Dialogs/Dialogs";
 import {Route} from 'react-router-dom'
 
-const App = () => {
+const App = (props) => {
     return (
         <div className='appWrapper'>
             <Header/>
@@ -14,11 +14,11 @@ const App = () => {
             <div className='content'>
                 <Route path='/profile'
                        render={() =>
-                           <Profile/>
+                           <Profile posts={props.state.posts}/>
                        }/>
                 <Route path='/dialogs'
                        render={() =>
-                           <Dialogs/>
+                           <Dialogs messageData={props.state.messageData} friendsData={props.state.friendsData}/>
                        }/>
 
             </div>

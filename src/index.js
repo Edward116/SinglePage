@@ -4,10 +4,12 @@ import reportWebVitals from './reportWebVitals';
 import ReactDOM from "react-dom";
 import App from "./App";
 import {BrowserRouter} from "react-router-dom";
+import {state} from "./state";
+
 
 ReactDOM.render(
     <BrowserRouter>
-        <App/>
+        <App state={state}/>
     </BrowserRouter>,
     document.getElementById('root')
 )

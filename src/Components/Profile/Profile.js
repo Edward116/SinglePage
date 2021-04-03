@@ -1,16 +1,14 @@
 import React from 'react';
 import s from './Profile.module.css'
 import MyPost from "./MyPosts/MyPost";
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
-const Profile = () => {
+const Profile = (props) => {
     return (
 
             <div>
-                <div className={s.image}>
-                    <img src="https://sebweo.com/wp-content/uploads/2019/06/landshaft-bernskikh-alp-v-yasniy-den_thumb.jpg" />
-                </div>
-                <div>ava + desc</div>
-                <MyPost/>
+                <ProfileInfo/>
+                <MyPost posts={props.posts}/>
             </div>
     );
 

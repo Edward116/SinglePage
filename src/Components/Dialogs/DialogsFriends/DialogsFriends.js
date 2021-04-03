@@ -1,19 +1,24 @@
 import React from 'react'
 import s from './DialogsFriends.module.css'
+import {NavLink} from "react-router-dom";
 
 
-const DialogsFriends = () => {
+const DialogsFriends = (props) => {
+
+
+
+
     return (
             <div className={s.friends}>
-                <div className={s.dialogsNames}>
-                    Ed
-                </div>
-                <div className={s.dialogsNames}>
-                    Ser
-                </div>
-                <div className={s.dialogsNames}>
-                    Art
-                </div>
+                {props.friendsData.map(data => {
+                    return(
+                        <div className={s.dialogsNames}>
+                            <NavLink to={'/dialogs/' + data.id}
+                                     activeClassName={s.active}>{data.name}</NavLink>
+                        </div>
+                    );
+                })}
+
             </div>
 
     );

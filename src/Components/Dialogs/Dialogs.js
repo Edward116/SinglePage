@@ -4,11 +4,12 @@ import DialogsFriends from "./DialogsFriends/DialogsFriends";
 import DialogsMessages from "./DialogsMessages/DialogsMessages";
 
 
-const Dialogs = () => {
+
+const Dialogs = (props) => {
     return (
         <div className={s.dialogsPage}>
-            <DialogsFriends/>
-            <DialogsMessages/>
+            <DialogsFriends friendsData={props.friendsData}/>
+            <DialogsMessages messageData={props.messageData}/>
         </div>
     );
 
