@@ -14,11 +14,14 @@ const App = (props) => {
             <div className='content'>
                 <Route path='/profile'
                        render={() =>
-                           <Profile posts={props.state.posts}/>
+                           <Profile posts={props.state.profilePage}
+                                    dispatch={props.dispatch}
+                                    />
                        }/>
                 <Route path='/dialogs'
                        render={() =>
-                           <Dialogs messageData={props.state.messageData} friendsData={props.state.friendsData}/>
+                           <Dialogs dialogsData={props.state.dialogsPage}
+                                    dispatch={props.dispatch}/>
                        }/>
 
             </div>

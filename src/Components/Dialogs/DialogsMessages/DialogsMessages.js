@@ -1,7 +1,18 @@
 import React from 'react'
 import s from './DialogsMessages.module.css'
+import {addMessageActionCreator, updateTextMessageActionCreator} from "../../../Redux/state";
 
 const DialogsMessages = (props) => {
+
+    const addMessage = () => {
+        props.dispatch(addMessageActionCreator())
+
+    }
+
+    const changeInput = (e) => {
+        let text = e.target.value;
+        props.dispatch(updateTextMessageActionCreator(text))
+    }
 
 
     return (
@@ -17,10 +28,13 @@ const DialogsMessages = (props) => {
             </div>
 
             <div>
-                <form>
-                    <input type="text"/>
-                    <button>Add Message</button>
-                </form>
+
+                    <input
+                        type="text"
+                           value={props.dialogText}
+                           onChange={changeInput}/>
+                    <button onClick={addMessage}>Add Message</button>
+
             </div>
         </div>
     );
