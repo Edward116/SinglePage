@@ -5,20 +5,20 @@ import {addMessageActionCreator, updateTextMessageActionCreator} from "../../../
 const DialogsMessages = (props) => {
 
     const addMessage = () => {
-        props.dispatch(addMessageActionCreator())
+        props.addMessage();
 
     }
 
     const changeInput = (e) => {
         let text = e.target.value;
-        props.dispatch(updateTextMessageActionCreator(text))
+        props.updateMessageText(text);
     }
 
 
     return (
         <div className={s.dialogs}>
             <div>
-                {props.messageData.map(data => {
+                {props.dialogsPage.messageData.map(data => {
                     return (
                         <div className={s.message}>
                             {data.message}

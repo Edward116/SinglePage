@@ -4,9 +4,20 @@ import reportWebVitals from './reportWebVitals';
 import ReactDOM from "react-dom";
 import App from "./App";
 import {BrowserRouter} from "react-router-dom";
-import store from "./Redux/state";
+import store from "./Redux/Store/Store";
+import {Provider} from "react-redux";
 
 
+ReactDOM.render(
+    <BrowserRouter>
+        <Provider store={store}>
+            <App/>
+        </Provider>
+    </BrowserRouter>,
+    document.getElementById('root')
+)
+
+/*
 export let rerender = () =>{
     ReactDOM.render(
         <BrowserRouter>
@@ -22,8 +33,7 @@ rerender();
 
 store.subscribe(rerender)
 
-
-
+*/
 
 
 // If you want to start measuring performance in your app, pass a function
