@@ -1,5 +1,4 @@
 import React from 'react'
-import s from './DialogsMessages.module.css'
 import {addMessageActionCreator, updateTextMessageActionCreator
 } from "../../../Redux/state";
 import {connect} from "react-redux";

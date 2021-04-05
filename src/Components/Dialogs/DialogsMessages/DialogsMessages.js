@@ -1,6 +1,5 @@
 import React from 'react'
 import s from './DialogsMessages.module.css'
-import {addMessageActionCreator, updateTextMessageActionCreator} from "../../../Redux/state";
 
 const DialogsMessages = (props) => {
 
@@ -31,7 +30,7 @@ const DialogsMessages = (props) => {
 
                     <input
                         type="text"
-                           value={props.dialogText}
+                           value={props.dialogsPage.dialogText}
                            onChange={changeInput}/>
                     <button onClick={addMessage}>Add Message</button>
 

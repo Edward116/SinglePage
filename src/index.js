@@ -17,23 +17,6 @@ ReactDOM.render(
     document.getElementById('root')
 )
 
-/*
-export let rerender = () =>{
-    ReactDOM.render(
-        <BrowserRouter>
-            <App state={store.getState()}
-                 dispatch={store.dispatch.bind(store)}
-                 />
-        </BrowserRouter>,
-        document.getElementById('root')
-    )
-}
-
-rerender();
-
-store.subscribe(rerender)
-
-*/
 
 
 // If you want to start measuring performance in your app, pass a function
