@@ -12,7 +12,7 @@ const DialogsFriends = (props) => {
             <div className={s.friends}>
                 {props.dialogsPage.friendsData.map(data => {
                     return(
-                        <div className={s.dialogsNames}>
+                        <div className={s.dialogsNames} key={data.id}>
                             <NavLink to={'/dialogs/' + data.id}
                                      activeClassName={s.active}>{data.name}</NavLink>
                         </div>

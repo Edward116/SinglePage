@@ -7,7 +7,7 @@ const Post = (props) => {
         <div className={s.postItem}>
                 {props.posts.map(data => {
                     return(
-                        <div>
+                        <div key={data.id}>
                             <img src="https://cdn3.f-cdn.com/contestentries/1376995/30494909/5b566bc71d308_thumb900.jpg" alt=""/>
                             {data.post}
                             <div>

@@ -22,7 +22,7 @@ const DialogsMessages = (props) => {
                         <div className={s.message}>
                             {data.message}
                         </div>
-                    )
+                    );
                 })}
             </div>
 
