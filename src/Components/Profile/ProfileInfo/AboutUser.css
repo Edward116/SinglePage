@@ -1,0 +1,20 @@
+.aboutUser{
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+
+}
+
+.usPhoto img{
+    width: 250px;
+}
+
+.usInfo{
+    margin: 20px;
+}
+
+.usName span{
+    font-size: 30px;
+}
+
+
+
