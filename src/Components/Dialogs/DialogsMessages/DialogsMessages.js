@@ -1,5 +1,6 @@
-import React from 'react'
-import s from './DialogsMessages.module.css'
+import React from 'react';
+import s from './DialogsMessages.module.css';
+import {Redirect} from "react-router-dom";
 
 const DialogsMessages = (props) => {
 

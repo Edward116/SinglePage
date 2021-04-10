@@ -1,5 +1,6 @@
 import React from "react";
 import './AboutUser.css'
+import image from '../../../AnotherThings/Images/img.png'
 
 const AboutUser = (props) => {
     let p = props.profile
@@ -8,7 +9,7 @@ const AboutUser = (props) => {
             <div className='usPhoto'>
                 <div>
                     <img
-                        src={p.photos.large} alt='Ava'/>
+                        src={p.photos.large || image} alt='Ava'/>
                 </div>
 
 

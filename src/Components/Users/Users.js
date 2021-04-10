@@ -1,7 +1,8 @@
 import React from "react";
 import s from './users.module.css'
 import image from '../../AnotherThings/Images/img.png'
-import {NavLink} from "react-router-dom";
+import {NavLink, Redirect} from "react-router-dom";
+
 
 const Users = (props) => {
 
@@ -11,6 +12,7 @@ const Users = (props) => {
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
     }
+
 
     return (
         <div>
@@ -32,12 +34,12 @@ const Users = (props) => {
                         </NavLink>
                         <div>
                             {u.followed ?
-                                <button onClick={() => {
-                                    props.unfollow(u.id)
-                                }}>Unfollow</button> :
-                                <button onClick={() => {
-                                    props.follow(u.id)
-                                }}>Follow</button>}
+                                <button disabled={props.followingInProgress.some(id => id === u.id)}
+                                        onClick={() => {props.unfollow(u.id)}}
+                                >Unfollow</button> :
+                                <button disabled={props.followingInProgress.some(id => id === u.id)}
+                                        onClick={() => {props.follow(u.id)}}
+                                >Follow</button>}
 
                         </div>
                     </span>
