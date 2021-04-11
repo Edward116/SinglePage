@@ -9,26 +9,23 @@ import {
 import Loader from "../../AnotherThings/Loader/Loader";
 import {Redirect} from "react-router-dom";
 import {withAuthRedirect} from "../../HOC/AuthRedirect";
+import {compose} from "redux";
 
 
 
 
 class UsersClass extends React.Component {
 
-
     componentDidMount() {
         this.props.getUsers(this.props.currentPage, this.props.pageSize);
 
     }
-
 
     onPageChanged = (pageNumber) => {
         this.props.getUsers(pageNumber, this.props.pageSize);
         }
 
     render() {
-
-
         return (<>
                 {this.props.isFetching ? <Loader/> :
                     <Users {...this.props}
@@ -39,11 +36,7 @@ class UsersClass extends React.Component {
     }
 }
 
-let AuthRedirectComponent = withAuthRedirect(UsersClass)
-
-
 let mapStateToProps = (state) => {
-
     return {
         users: state.usersPage.users,
         pageSize: state.usersPage.pageSize,
@@ -55,13 +48,16 @@ let mapStateToProps = (state) => {
 
 }
 
-const UsersContainer = connect(mapStateToProps, {
-    follow,
-    unfollow,
-    setCurrentPage,
-    followingProgress,
-    getUsers
-})(AuthRedirectComponent);
+export default compose(
+    connect(mapStateToProps, {
+        follow,
+        unfollow,
+        setCurrentPage,
+        followingProgress,
+        getUsers
+    }),
+    withAuthRedirect
+)(UsersClass)
 
-export default UsersContainer;
+
 
