@@ -1,6 +1,7 @@
 import React from "react";
 import './AboutUser.css'
 import image from '../../../AnotherThings/Images/img.png'
+import Status from "./Status";
 
 const AboutUser = (props) => {
     let p = props.profile
@@ -15,7 +16,10 @@ const AboutUser = (props) => {
 
             </div>
             <div className='usName'>
-                <span>{p.fullName}</span>
+                <div>
+                    <span className='name'>{p.fullName}</span>
+                </div>
+                <Status status='Hey-Hey'/>
                 <div className='usInfo'>
                     <p>aboutMe: {p.aboutMe}</p>
                     <p>contact: {p.contacts.instagram}</p>
