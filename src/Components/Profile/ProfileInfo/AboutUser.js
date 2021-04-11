@@ -19,7 +19,8 @@ const AboutUser = (props) => {
                 <div>
                     <span className='name'>{p.fullName}</span>
                 </div>
-                <Status status='Hey-Hey'/>
+                <Status status={props.status}
+                updateStatus={props.updateStatus}/>
                 <div className='usInfo'>
                     <p>aboutMe: {p.aboutMe}</p>
                     <p>contact: {p.contacts.instagram}</p>
