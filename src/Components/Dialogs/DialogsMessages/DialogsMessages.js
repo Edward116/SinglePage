@@ -1,17 +1,13 @@
 import React from 'react';
 import s from './DialogsMessages.module.css';
 import {Redirect} from "react-router-dom";
+import {Field, reduxForm} from "redux-form";
 
 const DialogsMessages = (props) => {
 
-    const addMessage = () => {
-        props.addMessage();
+    const addMessage = (value) => {
+        props.addMessage(value.dialogsMessage);
 
-    }
-
-    const changeInput = (e) => {
-        let text = e.target.value;
-        props.updateMessageText(text);
     }
 
 
@@ -28,17 +24,31 @@ const DialogsMessages = (props) => {
             </div>
 
             <div>
-
-                    <input
-                        type="text"
-                           value={props.dialogsPage.dialogText}
-                           onChange={changeInput}/>
-                    <button onClick={addMessage}>Add Message</button>
-
+                <MessageFormRedux onSubmit={addMessage}/>
             </div>
         </div>
     );
 
 }
+
+const MessageForm = (props) => {
+
+    return (
+        <form onSubmit={props.handleSubmit}>
+            <div>
+                <Field placeholder={'Enter your message'} component={'textarea'}
+                       name={'dialogsMessage'}/>
+            </div>
+           <div>
+               <button>Add Message</button>
+           </div>
+
+        </form>
+    );
+}
+
+const MessageFormRedux = reduxForm({
+    form: 'dialogMessageForm'
+})(MessageForm);
 
 export default DialogsMessages
