@@ -1,0 +1,17 @@
+
+.error input,
+.error textarea {
+    border: solid red 2px;
+}
+
+.error span {
+    color: red
+}
+
+.summaryError{
+    border: red 1px solid;
+    padding: 5px;
+    color: coral;
+}
+
+
